@@ -1,5 +1,5 @@
-const C='aufstieg-v1';
-const F=['./','index.html','manifest.json','icon-180.png','icon-192.png','icon-512.png'];
+const C='aufstieg-v1.1b';
+const F=['./','index.html','style.css','data.js','app.js','manifest.json','icon-180.png','icon-192.png','icon-512.png'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(C).then(c=>c.addAll(F)));self.skipWaiting();});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==C).map(x=>caches.delete(x)))));self.clients.claim();});
 // Netzwerk zuerst (damit Updates sofort ankommen), offline aus dem Cache
